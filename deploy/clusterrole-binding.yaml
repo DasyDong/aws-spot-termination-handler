@@ -1,0 +1,13 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: spot-termination-handler
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: spot-termination-handler
+subjects:
+- kind: ServiceAccount
+  name: spot-termination-handler
+  namespace: kube-system
